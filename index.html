@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MyTDL</title>
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <style>
+        .container {
+          display: grid;
+          grid-template: 100px 50px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 50px / repeat(12, 1fr);
+          grid-gap: 3px;
+          box-sizing: border-box;
+        }
+
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+    </style>
+  </head>
+
+
+
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <header><h1>TO DO LIST<h1></header>
+      </div>
+
+      <div class="task">
+        <button class="btn success">ADD A TASK</button>
+
+      </div>
+
+      <div class="empty">2</div>
+
+      <div class="username p1">
+        <pre>USERNAME  <img src="logout.png"  width="20px"></pre>
+      </div>
+      <div class="main">
+        <h2>My to do list</h2>
+        <div>
+          <table style="width:100%">
+            <tr>
+              <th style="width:15%">Date</th>
+              <th style="width:55%">Task</th>
+              <th style="width:15%">Status</th>
+              <th style="width:15%">Options</th>
+            </tr>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>
+                <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                  <div id="myDropdown" class="dropdown-content">
+                    <a href="#home">Finished</a>
+                    <a href="#about">Edit Task</a>
+                    <a href="#contact">Delete Task</a>
+                  </div>
+                </div>
+              </td>
+
+            </td>
+
+              
+            <tr>
+
+
+            </tr>
+            <tr>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>Some buttons here</td>
+            </tr>
+            <tr>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>Some text here</td>
+              <td>Some buttons here</td>
+            </tr>
+
+
+           </table>
+           <div class="right">
+             <h2>Filter Table</h2>
+           </div>
+        </div>
+      </div>
+
+      <div class="side">
+        <h1 class="right">This will be where the log is</h1>
+      </div>
+
+      <div class="footer">
+        <h2 style="text-align:center;">research some standard footer information</h2>
+      </div>
+
+
+
+      </div>
+
+      <script>
+        /* When the user clicks on the button, 
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        // Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+  </body>
+</html>
